@@ -1,0 +1,46 @@
+*
+{
+    margin: 0;
+    padding:0;
+}
+
+html,body
+{
+    overflow: hidden;
+}
+
+/* Style for the scoreboard container */
+#scoreboard {
+    position: absolute;
+    top: 150px;
+    left: 0px;
+
+    z-index: 1;
+
+    width: 128px;
+    border: 1px solid #ccc;
+    padding: 10px;
+
+}
+
+/* Style for each player entry */
+.player {
+    margin-bottom: 8px;
+    display: flex;
+    
+}
+
+/* Style for player name */
+.player-name {
+    font-weight: bold;
+    flex: 80%;
+    margin-right: 5px;
+    overflow: hidden;
+
+}
+
+/* Style for player score */
+.player-score {
+    color: #007bff;
+    flex: 20%;
+}
