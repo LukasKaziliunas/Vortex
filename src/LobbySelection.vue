@@ -24,7 +24,9 @@ import { ref } from 'vue';
 
 const lobbies = ref([]);
 
-fetch('/getLobbies')
+const URL = import.meta.env.MODE === 'production' ? import.meta.env.VITE_BACKEND_SERVER_PROD : import.meta.env.VITE_BACKEND_SERVER_DEV;
+
+fetch(`${URL}/getLobbies`)
 .then(data => { 
    return data.json() 
 })

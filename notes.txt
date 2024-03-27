@@ -22,3 +22,6 @@ threejs rotation nusisetins i 0, todel yra svarbu iskart suorentuoti modeli paci
 
 jei reikia pasukti visa modeli blenderyje, tai reikia daryti edit mode, bet kartais sukasi ne visas modelis bendrai o atskiros dalys
 , workaround butu nukopijuoti visa modeli ir perkelti i nauja project, tada visi tie atskiri meshai susijungia ir galima sukti bendrai
+
+
+frontend - sockets - backend - cors  https://www.youtube.com/watch?v=djMy4QsPWiI

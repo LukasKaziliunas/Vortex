@@ -30,6 +30,7 @@ import { Models } from './modules/Models.js';
 import { ref } from 'vue';
 import { Audios } from './modules/Audio.js';
 import { useSettingsStore } from './store/settingsStore'
+import { io } from "socket.io-client";
 
 const store = useSettingsStore();
 
@@ -61,7 +62,9 @@ async function startGame(playerName, lobbyName)
     await Models.loadModels();
     await Audios.loadAudio(store.soundOn, store.volume);
 
-    var socket = io(window.location.host, {
+    const URL = import.meta.env.MODE === 'production' ?import.meta.env.VITE_BACKEND_SERVER_PROD : import.meta.env.VITE_BACKEND_SERVER_DEV;
+
+    var socket = io(URL, {
         query: {
             "name": playerName,
             "room": lobbyName

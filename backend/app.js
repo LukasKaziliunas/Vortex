@@ -1,12 +1,18 @@
 const express = require('express');
 const http = require('http');
-const socketIO = require('socket.io');
+const { Server } = require('socket.io');
 var cors = require('cors')
+require('dotenv').config()
 
 const app = express();
 app.use(express.json());
 const server = http.createServer(app);
-const io = socketIO(server);
+
+const io = new Server(server, {
+  cors: {
+    origin: process.env.ENV === 'production' ? process.env.FRONTEND_SERVER : 'http://localhost:5173'
+  }
+});
 
 const { LobbyManager } = require('./services/LobbyManager.js');
 
