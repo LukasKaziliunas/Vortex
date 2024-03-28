@@ -8,6 +8,8 @@ const app = express();
 app.use(express.json());
 const server = http.createServer(app);
 
+console.log(process.platform)
+
 const io = new Server(server, {
   cors: {
     origin: process.env.ENV === 'production' ? process.env.FRONTEND_SERVER : 'http://localhost:5173'
