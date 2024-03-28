@@ -4,6 +4,7 @@ export default {
     root: 'src/',
     publicDir: 'public',
     base: './',
+    envDir: "../",
     build:
     {
         outDir: '../dist',
