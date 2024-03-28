@@ -25,3 +25,10 @@ jei reikia pasukti visa modeli blenderyje, tai reikia daryti edit mode, bet kart
 
 
 frontend - sockets - backend - cors  https://www.youtube.com/watch?v=djMy4QsPWiI
+
+
+nustatyti env variables production aplinkoje:
+VITE_BACKEND_SERVER_PROD={address of backend server}
+
+ir nustatyti backende env var 
+FRONTEND_SERVER={address of frontend server }
