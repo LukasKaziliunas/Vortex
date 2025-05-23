@@ -12,7 +12,7 @@ console.log(process.platform)
 
 const io = new Server(server, {
   cors: {
-    origin: process.env.ENV === 'production' ? process.env.FRONTEND_SERVER : 'http://localhost:5173'
+    origin: process.env.FRONTEND_SERVER
   }
 });
 
@@ -74,10 +74,9 @@ io.on('connection', (socket) => {
 
 setInterval(() => {
   lobbyManager.updateGameStates();
-}, 1000 / 30);
+}, 1000 / 60);
 
 app.get('/', async (req, res) => {
-
   res.sendFile(__dirname + '../dist/index.html');
 
 })
@@ -89,17 +88,17 @@ app.get('/debug', async (req, res) => {
   res.send();
 })
 
-app.get('/getLobbies', (req, res) => {
+app.get('/api/getLobbies', (req, res) => {
   res.json(lobbyManager.getLobbies());
 })
 
-app.get('/deleteLobby', (req, res) => {
+app.get('/api/deleteLobby', (req, res) => {
   let name = req.query.name;
   let result = lobbyManager.deleteLobby(name);
   res.json({result: result})
 })
 
-app.get('/createLobby', (req, res) => {
+app.get('/api/createLobby', (req, res) => {
   let name = req.query.name;
   let result = lobbyManager.createLobby(name, true);
   res.json({result: result});

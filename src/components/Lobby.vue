@@ -32,9 +32,9 @@ const redirectLobby = () => {
 }  
 
 const remove = () => {
-    const URL = import.meta.env.MODE === 'production' ? import.meta.env.VITE_BACKEND_SERVER_PROD : import.meta.env.VITE_BACKEND_SERVER_DEV;
+    const URL = import.meta.env.VITE_BACKEND_SERVER;
 
-    fetch(`${URL}/deleteLobby?name=${props.name}`)
+    fetch(`${URL}/api/deleteLobby?name=${props.name}`)
     .then(data => { 
         return data.json() 
     })

@@ -24,8 +24,8 @@
         }
         else
         {
-            const URL = import.meta.env.MODE === 'production' ? import.meta.env.VITE_BACKEND_SERVER_PROD : import.meta.env.VITE_BACKEND_SERVER_DEV;
-            fetch(`${URL}/createLobby?name=${lobbyName.value}`)
+            const URL = import.meta.env.VITE_BACKEND_SERVER;
+            fetch(`${URL}/api/createLobby?name=${lobbyName.value}`)
             .then(data => { 
             return data.json() 
             })
