@@ -62,8 +62,8 @@ async function startGame(playerName, lobbyName)
     await Models.loadModels();
     await Audios.loadAudio(store.soundOn, store.volume);
 
-    const URL = import.meta.env.MODE === 'production' ?import.meta.env.VITE_BACKEND_SERVER_PROD : import.meta.env.VITE_BACKEND_SERVER_DEV;
-
+    const URL = import.meta.env.VITE_BACKEND_SERVER;
+    console.log("Connecting to server at: " + URL);
     var socket = io(URL, {
         query: {
             "name": playerName,

@@ -74,8 +74,7 @@ io.on('connection', (socket) => {
 
 setInterval(() => {
   lobbyManager.updateGameStates();
-}, 17);
-
+}, 1000 / 30);
 
 app.get('/', async (req, res) => {
 
